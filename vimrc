@@ -56,7 +56,7 @@ set laststatus=2                  " Show the status line all the time
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 
-colorscheme hpoydar 
+colorscheme ir_black 
 
 
 " Tab mappings.
@@ -74,7 +74,7 @@ map <leader>tm :tabmove
 map <Leader>ff :FuzzyFinderTextMate<Enter>
 
 " Turn on line highlighting
-set cursorline
+" set cursorline
 
 " For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
 " autocmd BufNewFile,BufRead *_spec.rb compiler rspec
