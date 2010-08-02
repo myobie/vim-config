@@ -51,12 +51,15 @@ set smarttab
 set autoindent
 set backspace=start,indent
 
+nmap <D-[> <<
+nmap <D-]> >>
+vmap <D-[> <gv
+vmap <D-]> >gv
+
+
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
-
-
-colorscheme ir_black 
 
 
 " Tab mappings.
@@ -135,5 +138,17 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 
 
+" Spellcheck
+nmap <silent> <leader>s :set spell!<CR>
+ 
+" Set region to British English
+set spelllang=en_us
 
+" Lines that wrap
+:set showbreak=…
+
+
+
+
+colorscheme ir_black 
 

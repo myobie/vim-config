@@ -15,3 +15,5 @@ set showtabline=2
 
 " Full screen should be full screen
 set fuoptions=maxvert,maxhorz
+
+colorscheme ir_black
