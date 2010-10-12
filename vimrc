@@ -145,7 +145,7 @@ nmap <silent> <leader>s :set spell!<CR>
 set spelllang=en_us
 
 " Lines that wrap
-:set showbreak=…
+:set showbreak=•
 
 
 
