@@ -1,0 +1,21 @@
+[submodule "bundle/msanders-snipmate"]
+	path = bundle/msanders-snipmate
+	url = http://github.com/msanders/snipmate.vim.git
+[submodule "bundle/scrooloose-nerdtree"]
+	path = bundle/scrooloose-nerdtree
+	url = http://github.com/scrooloose/nerdtree.git
+[submodule "bundle/tpope-vim-haml"]
+	path = bundle/tpope-vim-haml
+	url = http://github.com/tpope/vim-haml.git
+[submodule "bundle/tpope-vim-ragtag"]
+	path = bundle/tpope-vim-ragtag
+	url = http://github.com/tpope/vim-ragtag.git
+[submodule "bundle/tpope-vim-rails"]
+	path = bundle/tpope-vim-rails
+	url = http://github.com/tpope/vim-rails.git
+[submodule "bundle/tpope-vim-surround"]
+	path = bundle/tpope-vim-surround
+	url = http://github.com/tpope/vim-surround.git
+[submodule "bundle/tsaleh-vim-tcomment"]
+	path = bundle/tsaleh-vim-tcomment
+	url = http://github.com/tsaleh/vim-tcomment.git
