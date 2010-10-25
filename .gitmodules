@@ -19,3 +19,6 @@
 [submodule "bundle/tsaleh-vim-tcomment"]
 	path = bundle/tsaleh-vim-tcomment
 	url = http://github.com/tsaleh/vim-tcomment.git
+[submodule "bundle/Raimondi-delimitMate"]
+	path = bundle/Raimondi-delimitMate
+	url = http://github.com/Raimondi/delimitMate.git
