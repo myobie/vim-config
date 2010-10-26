@@ -28,3 +28,6 @@
 [submodule "bundle/scrooloose-nerdcommenter"]
 	path = bundle/scrooloose-nerdcommenter
 	url = http://github.com/scrooloose/nerdcommenter.git
+[submodule "src/rstacruz-sparkup"]
+	path = src/rstacruz-sparkup
+	url = http://github.com/rstacruz/sparkup.git
