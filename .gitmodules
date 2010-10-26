@@ -22,3 +22,9 @@
 [submodule "bundle/Raimondi-delimitMate"]
 	path = bundle/Raimondi-delimitMate
 	url = http://github.com/Raimondi/delimitMate.git
+[submodule "bundle/rstacruz-sparkup"]
+	path = bundle/rstacruz-sparkup
+	url = http://github.com/rstacruz/sparkup.git
+[submodule "bundle/scrooloose-nerdcommenter"]
+	path = bundle/scrooloose-nerdcommenter
+	url = http://github.com/scrooloose/nerdcommenter.git

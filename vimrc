@@ -2,6 +2,7 @@
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
 
 set nocompatible                  " Must come first because it changes other options.
+set modelines=0                   " Security
 
 silent! call pathogen#runtime_append_all_bundles()
 
@@ -10,8 +11,11 @@ filetype plugin indent on         " Turn on file type detection.
 
 runtime macros/matchit.vim        " Load the matchit plugin.
 
+set encoding=utf-8
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
+
+set ttyfast
 
 set backspace=indent,eol,start    " Intuitive backspacing.
 
@@ -28,9 +32,27 @@ set ruler                         " Show cursor position.
 
 set incsearch                     " Highlight matches as you type.
 set hlsearch                      " Highlight matches.
+set showmatch
+
+" Backups
+set backupdir=~/.vim/tmp/backup// " backups
+set directory=~/.vim/tmp/swap//   " swap files
+set backup                        " enable backups
+
+nnoremap / /\v
+vnoremap / /\v
+
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
 
 set wrap                          " Turn on line wrapping.
+set textwidth=79
+set formatoptions=qrn1
 set scrolloff=3                   " Show 3 lines of context around the cursor.
+
+set list
+set listchars=tab:▸\ ,eol:¬
 
 set title                         " Set the terminal's title
 
@@ -55,7 +77,57 @@ nmap <D-[> <<
 nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
+imap <D-[> <ESC><<i
+imap <D-]> <ESC>>>i
+nnoremap j gj
+nnoremap k gk
 
+set fuoptions=maxvert,maxhorz
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
+nnoremap ; :
+
+" Folding
+set foldlevelstart=0
+nnoremap <Space> za
+vnoremap <Space> za
+nnoremap <leader>ft Vatzf
+
+" HTML tag closing
+inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
+
+vnoremap <D-/> gcc
+inoremap <D-/> <ESC>gcci
+
+" Make selecting inside an HTML tag less dumb
+nnoremap Vit vitVkoj
+nnoremap Vat vatV
+
+function! MyFoldText()
+    let line = getline(v:foldstart)
+
+    let nucolwidth = &fdc + &number * &numberwidth
+    let windowwidth = winwidth(0) - nucolwidth - 3
+    let foldedlinecount = v:foldend - v:foldstart
+
+    " expand tabs into spaces
+    let onetab = strpart('          ', 0, &tabstop)
+    let line = substitute(line, '\t', onetab, 'g')
+
+    let line = strpart(line, 0, windowwidth - 2 -len(foldedlinecount))
+    let fillcharcount = windowwidth - len(line) - len(foldedlinecount) - 4
+    return line . '…' . repeat(" ",fillcharcount) . foldedlinecount . '…' . ' '
+endfunction
+set foldtext=MyFoldText()
+
+inoremap jj <ESC>
+
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
