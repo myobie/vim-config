@@ -46,7 +46,7 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-set wrap                          " Turn on line wrapping.
+" set wrap                          " Turn on line wrapping.
 set textwidth=79
 set formatoptions=qrn1
 set scrolloff=3                   " Show 3 lines of context around the cursor.
@@ -82,7 +82,8 @@ imap <D-]> <ESC>>>i
 nnoremap j gj
 nnoremap k gk
 
-set fuoptions=maxvert,maxhorz
+imap <S-CR> <ESC>A<CR>
+
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
@@ -102,8 +103,8 @@ vnoremap <D-/> gcc
 inoremap <D-/> <ESC>gcci
 
 " Make selecting inside an HTML tag less dumb
-nnoremap Vit vitVkoj
-nnoremap Vat vatV
+" nnoremap Vit vitVkoj
+" nnoremap Vat vatV
 
 function! MyFoldText()
     let line = getline(v:foldstart)
@@ -160,7 +161,7 @@ imap <C-l> <Space>=><Space>
 let mapleader = ","
 
 " Nice commands to run the current ruby file
-map <D-r> :!source ~/.bash_profile; r %<CR>
+map <D-r> :!source ~/.bash_profile; cd .; r %<CR>
 
 " Fuzzy options
 let g:fuzzy_ignore = "*.log"
