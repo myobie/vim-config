@@ -18,4 +18,20 @@ set showtabline=2
 " Full screen should be full screen
 set fuoptions=maxvert,maxhorz
 
+" Command-Shift-F for Ack
+macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
+map <D-F> :Ack<space>
+
+" ConqueTerm wrapper
+function StartTerm()
+  execute 'ConqueTerm bash --login'
+  setlocal listchars=tab:\ \ 
+endfunction
+
+" Command-e for ConqueTerm
+map <D-e> :call StartTerm()<CR>
+
+" Command-/ to toggle comments
+map <D-/> <plug>NERDCommenterToggle<CR>
+
 colorscheme ir_black
