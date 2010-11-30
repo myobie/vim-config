@@ -34,3 +34,9 @@
 [submodule "bundle/hallison-vim-ruby-sinatra"]
 	path = bundle/hallison-vim-ruby-sinatra
 	url = https://github.com/hallison/vim-ruby-sinatra.git
+[submodule "bundle/ervandew-supertab"]
+	path = bundle/ervandew-supertab
+	url = git://github.com/ervandew/supertab.git
+[submodule "bundle/Townk-vim-autoclose"]
+	path = bundle/Townk-vim-autoclose
+	url = https://github.com/Townk/vim-autoclose.git
