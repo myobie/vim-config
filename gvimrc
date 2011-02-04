@@ -20,7 +20,6 @@ set fuoptions=maxvert,maxhorz
 
 " Command-Shift-F for Ack
 macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
-map <D-F> :Ack<space>
 
 " ConqueTerm wrapper
 function StartTerm()
