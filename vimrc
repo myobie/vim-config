@@ -41,13 +41,6 @@ set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 set backup                        " enable backups
 
-nnoremap / /\v
-vnoremap / /\v
-
-nnoremap <leader><space> :noh<cr>
-nnoremap <tab> %
-vnoremap <tab> %
-
 " set wrap                          " Turn on line wrapping.
 set nowrap
 set textwidth=79
@@ -56,17 +49,15 @@ set scrolloff=3                   " Show 3 lines of context around the cursor.
 
 set list listchars=tab:\ \ ,eol:¬,trail:·
 
-
 set title                         " Set the terminal's title
 
-set visualbell                    " No beeping.
+"set visualbell                    " No beeping.
 set noerrorbells                  " No noise.
 
 set laststatus=2                  " Always show status line.
 
 set nobackup                      " Don't make a backup before overwriting a file.
 set nowritebackup                 " And again.
-set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
 " UNCOMMENT TO USE
 set tabstop=2                    " Global tab width.
@@ -91,12 +82,8 @@ inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 
-nnoremap ; :
-
 " Folding
 set foldlevelstart=0
-nnoremap <Space> za
-vnoremap <Space> za
 nnoremap <leader>ft Vatzf
 
 " HTML tag closing
@@ -127,11 +114,6 @@ endfunction
 set foldtext=MyFoldText()
 
 inoremap jj <ESC>
-
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
@@ -181,13 +163,13 @@ let g:NERDTreeIgnore = ['\~$', '\.git$', '\.swp$', '\.DS_Store$']
 map <leader>a :Ack<space>
 
 " Make backspace work the way it should
-set backspace=2
+" set backspace=2
 
 " Make backspace and cursor keys wrap accordingly"
 set whichwrap+=<,>,h,l
 
 " Make searches case-insensitive
-set ignorecase
+" set ignorecase
 
 " Make editing .vimrc easier
 map <leader>v :sp ~/.vimrc<CR>
@@ -219,6 +201,13 @@ autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 au FileType make                                     set noexpandtab
 au FileType python                                   set noexpandtab
 
+" make markdown and txt wrap
+au FileType markdown                                 set wrap
+au Filetype markdown                                 set linebreak
+
+au FileType txt                                 set wrap
+au Filetype txt                                 set linebreak
+
 " Thorfile, Rakefile and Gemfile are Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Thorfile,config.ru}    set ft=ruby
 
@@ -240,7 +229,7 @@ au BufRead,BufNewFile *.txt call s:setupWrapping()
 
 " Spellcheck
 nmap <silent> <leader>s :set spell!<CR>
- 
+
 " Set region to British English
 set spelllang=en_us
 
@@ -250,5 +239,5 @@ set spelllang=en_us
 
 
 
-colorscheme ir_black 
+colorscheme ir_black
 

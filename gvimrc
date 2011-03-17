@@ -19,7 +19,7 @@ set showtabline=2
 set fuoptions=maxvert,maxhorz
 
 " Command-Shift-F for Ack
-macmenu Window.Toggle\ Full\ Screen\ Mode key=<nop>
+" macmenu Window.Toggle\\ Full\\ Screen\\ Mode key=<nop>
 
 " ConqueTerm wrapper
 function StartTerm()
