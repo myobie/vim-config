@@ -9,8 +9,6 @@ silent! call pathogen#runtime_append_all_bundles()
 syntax enable                     " Turn on syntax highlighting.
 filetype plugin indent on         " Turn on file type detection.
 
-runtime macros/matchit.vim        " Load the matchit plugin.
-
 set encoding=utf-8
 set showcmd                       " Display incomplete commands.
 set showmode                      " Display the mode you're in.
@@ -37,8 +35,8 @@ set hlsearch                      " Highlight matches.
 set showmatch
 
 " Backups
-set backupdir=~/.vim/tmp/backup// " backups
-set directory=~/.vim/tmp/swap//   " swap files
+set backupdir=~/.vim/tmp/backup/  " backups
+set directory=~/.vim/tmp/swap/    " swap files
 set backup                        " enable backups
 
 " set wrap                          " Turn on line wrapping.
@@ -51,7 +49,7 @@ set list listchars=tab:\ \ ,eol:¬,trail:·
 
 set title                         " Set the terminal's title
 
-"set visualbell                    " No beeping.
+"set visualbell                   " No beeping.
 set noerrorbells                  " No noise.
 
 set laststatus=2                  " Always show status line.
@@ -77,6 +75,7 @@ nnoremap j gj
 nnoremap k gk
 
 imap <S-CR> <ESC>A<CR>
+imap <D-CR> <ESC>A;<CR>
 
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
@@ -89,12 +88,8 @@ nnoremap <leader>ft Vatzf
 " HTML tag closing
 inoremap <C-_> <Space><BS><Esc>:call InsertCloseTag()<cr>a
 
-vnoremap <D-/> gcc
-inoremap <D-/> <ESC>gcci
-
-" Make selecting inside an HTML tag less dumb
-" nnoremap Vit vitVkoj
-" nnoremap Vat vatV
+" vnoremap <D-/> gcc
+" inoremap <D-/> <ESC>gcci
 
 function! MyFoldText()
     let line = getline(v:foldstart)
@@ -116,8 +111,9 @@ set foldtext=MyFoldText()
 inoremap jj <ESC>
 
 set laststatus=2                  " Show the status line all the time
+
 " Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 
 " Tab mappings.
@@ -131,26 +127,15 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
-" Uncomment to use Jamis Buck's file opening plugin
-map <Leader>ff :FuzzyFinderTextMate<Enter>
-
 " Turn on line highlighting
-" set cursorline
-
-" For the MakeGreen plugin and Ruby RSpec. Uncomment to use.
-" autocmd BufNewFile,BufRead *_spec.rb compiler rspec
-
-
+set cursorline
 
 imap <C-l> <Space>=><Space>
+
 let mapleader = ","
 
 " Nice commands to run the current ruby file
 map <D-r> :!source ~/.bash_profile; cd .; r %<CR>
-
-" Fuzzy options
-let g:fuzzy_ignore = "*.log"
-let g:fuzzy_matching_limit = 70
 
 " Set up command for NERDTree
 map <leader>n :NERDTree<CR>
@@ -158,9 +143,6 @@ map <leader>n :NERDTree<CR>
 " NERDTree options
 let g:NERDTreeShowHidden = 1
 let g:NERDTreeIgnore = ['\~$', '\.git$', '\.swp$', '\.DS_Store$']
-
-" Map ack
-map <leader>a :Ack<space>
 
 " Make backspace work the way it should
 " set backspace=2
@@ -181,7 +163,6 @@ function! AckGrep(command)
 endfunction
 
 command! -nargs=+ -complete=file Ack call AckGrep(<q-args>)
-
 
 " Omni Completion
 " *************************************************************
@@ -238,6 +219,4 @@ set spelllang=en_us
 
 
 
-
 colorscheme ir_black
-
