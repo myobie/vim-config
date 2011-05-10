@@ -35,8 +35,6 @@ set hlsearch                      " Highlight matches.
 set showmatch
 
 " Backups
-set backupdir=~/.vim/tmp/backup/  " backups
-set directory=~/.vim/tmp/swap/    " swap files
 set backup                        " enable backups
 
 " set wrap                          " Turn on line wrapping.
